@@ -1,0 +1,415 @@
+/* Create new font family */
+@font-face {
+  font-family: 'Sigmar';
+  src: url('/Fonts/Sigmar-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Lilita';
+  src: url('/Fonts/LilitaOne-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Play';
+  src: url('/Fonts/PlaywriteMXGuides-Regular.ttf');
+
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+--primary-color: #438fc2;
+--secondary-color: #4a6580;
+--accent-color: #ecf0f1;
+--text-dark: #484747;
+--card-bg: #ffffff;
+--card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+} 
+
+[data-theme="dark"] {
+--primary-color: #0f2f63;
+--secondary-color: #202124;
+--accent-color: #303134;
+--text-dark: #000000;
+--card-bg: #3c4043;
+--card-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background: var(--primary-color);
+color: white;
+border: none;
+border-radius: 50%;
+width: 48px;
+height: 48px;
+font-size: 1.2rem;
+cursor: pointer;
+box-shadow: var(--card-shadow);
+z-index: 1000;
+}
+
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('../images/bg.jpg') no-repeat center center fixed;
+background-size: cover;
+min-height: 100vh;
+color: var(--text-dark);
+}
+
+
+/* Header */
+header {
+background-color: var(--secondary-color);
+color: white;
+padding: 1.5rem;
+text-align: center;
+box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.logo {
+font-family: 'Lilita';
+color: #ffffff;
+font-size: 2rem;
+font-weight: bold;
+}
+
+nav ul {
+display: flex;
+list-style: none;
+}
+
+nav li {
+margin-left: 1.5rem;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+padding: 0.5rem;
+border-radius: 4px;
+transition: all 0.3s ease;
+}
+
+nav a:hover {
+background-color: #3498db;
+}
+
+/* Main Content */
+.container {
+max-width: 1200px;
+margin: 2rem auto;
+padding: 0 1rem;
+}
+
+h1 {
+color: #2c3e50;
+margin-bottom: 1.5rem;
+text-align: center;
+}
+
+h3 {
+font-family: Sigmar;
+font-size: 2em;
+}
+/* Cards */
+.card {
+background-color: var(--card-bg);
+color: var(--text-dark);
+box-shadow: var(--card-shadow);
+border-radius: 12px;
+padding: 1.5rem;
+margin: 1rem 0;
+transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Course Cards */
+.course-card {
+background: white;
+background-size: cover;
+background-blend-mode: overlay;
+}
+
+.course {
+background-color: #2980b9;
+background-position: cover;
+display: flex;
+flex-direction: column;
+height: 100%;
+}
+
+.course-img {
+width: 100%;
+height: 180px;
+object-fit: cover;
+border-radius: 6px;
+margin-bottom: 1rem;
+}
+
+/* Instructor Cards */
+.instructor {
+display: flex;
+align-items: center;
+}
+
+.instructor-img {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+object-fit: cover;
+margin-right: 1.5rem;
+border: 3px solid #3498db;
+}
+
+
+/* FAQ */
+.faq-item {
+margin-bottom: 1rem;
+}
+
+.faq-question {
+background: #3498db;
+color: white;
+padding: 1rem;
+border-radius: 6px;
+cursor: pointer;
+font-weight: bold;
+transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+background: #2980b9;
+}
+
+.faq-answer {
+padding: 1rem;
+background: #f8f9fa;
+border-radius: 0 0 6px 6px;
+display: none;
+}
+
+/* Contact Form */
+.contact-form {
+background: white;
+padding: 2rem;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+max-width: 800px;
+margin: 0 auto;
+}
+
+.form-group {
+margin-bottom: 1.5rem;
+}
+
+label {
+display: block;
+margin-bottom: 0.5rem;
+font-weight: bold;
+color: #2c3e50;
+}
+
+input, textarea, select {
+width: 100%;
+padding: 0.8rem;
+border: 1px solid #ddd;
+border-radius: 4px;
+font-family: inherit;
+}
+
+textarea {
+min-height: 150px;
+}
+
+/* Buttons */
+.btn {
+background-color: var(--primary-color);
+color: #fff;
+padding: 0.7rem 1.2rem;
+border: none;
+border-radius: 8px;
+font-weight: 600;
+cursor: pointer;
+transition: background 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+background-color: #2980b9;
+transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+background-color: var(--secondary-color);
+color: white;
+padding: 1.5rem;
+text-align: center;
+box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+
+/* Grid Layout */
+.course-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 1.5rem;
+margin: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+nav {
+  flex-direction: column;
+}
+
+nav ul {
+  margin-top: 1rem;
+}
+
+.instructor {
+  flex-direction: column;
+  text-align: center;
+}
+
+.instructor-img {
+  margin-right: 0;
+  margin-bottom: 1rem;
+}
+}
+
+/* ===== Base Responsive Styles ===== */
+/* Mobile First Approach (default styles are for mobile) */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+.container {
+  padding: 0 1.5rem;
+}
+
+.course-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+/* Navigation */
+.menu-toggle {
+  display: none;
+}
+
+.nav-links {
+  display: flex !important; /* Override mobile style */
+}
+
+/* Layout */
+.instructor {
+  flex-direction: row;
+  text-align: left;
+}
+
+.instructor-img {
+  margin-right: 1.5rem;
+  margin-bottom: 0;
+}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+.course-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Adjust font sizes */
+h1 {
+  font-size: 2.5rem;
+}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+.container {
+  max-width: 1140px;
+}
+}
+
+/* ===== Mobile-Specific Styles ===== */
+@media (max-width: 767px) {
+/* Navigation */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0.5rem 0;
+}
+
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Cards */
+.card {
+  padding: 1rem;
+}
+
+.instructor {
+  flex-direction: column;
+  text-align: center;
+}
+
+.instructor-img {
+  margin-right: 0;
+  margin-bottom: 1rem;
+}
+
+/* Typography */
+h1 {
+  font-size: 1.8rem;
+}
+
+/* Forms */
+.contact-form {
+  padding: 1rem;
+}
+}
+
+/* ===== Touch-Friendly Elements ===== */
+@media (hover: none) {
+.btn, .faq-question {
+  min-height: 48px; /* Minimum touch target size */
+  padding: 0.5rem 1rem;
+}
+}
