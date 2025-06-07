@@ -1,11 +1,17 @@
 <%- include('partials/header') %>
-<section class="container">
-  <h1>Course Quiz</h1>
-  <div id="quiz-container">
-    <p id="description"></p>
-    <div id="options"></div>
-    <p>Score: <span id="score">0</span></p>
-  </div>
+
+<section class="container" style="padding: 3rem 0;">
+  <h1>Test your knowledge!</h1>
+
+  <p id="question-counter" style="font-weight: bold; margin-bottom: 1rem;"></p>
+
+  <div id="description"></div>
+  <div id="options" style="margin-top: 1rem;"></div>
+  <p>Score: <span id="score">0</span></p>
 </section>
+
+
+
 <%- include('partials/footer') %>
+
 <script src="/js/quiz.js"></script>

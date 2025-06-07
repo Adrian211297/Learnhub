@@ -5,5 +5,19 @@
     "subject": "general",
     "message": "hello there",
     "date": "2025-04-17T11:21:53.633Z"
+  },
+  {
+    "name": "jan kowalski",
+    "email": "jk@gmail.com",
+    "subject": "billing",
+    "message": "How much does tge coursse x cost?",
+    "date": "2025-05-02T13:23:11.536Z"
+  },
+  {
+    "name": "Sara Sanchez",
+    "email": "sara@gmail.com",
+    "subject": "general",
+    "message": "hello",
+    "date": "2025-05-02T14:10:52.189Z"
   }
 ]

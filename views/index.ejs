@@ -1,26 +1,41 @@
-
 <%- include('partials/header') %>
-<div class="container">
-  <h1>Welcome to LearnHub</h1>
-  <p style="text-align: center; margin-bottom: 2rem;">Your gateway to knowledge and skills development</p>
-  <div class="card">
-    <h2 style="color: #3498db; margin-bottom: 1rem;">Upcoming Events</h2>
-    <div class="course-grid">
-      <div class="card">
-        <h3>Web Development Workshop</h3>
-        <p><strong>Date:</strong> March 15, 2025</p>
-        <p><strong>Time:</strong> 2:00 PM</p>
-        <p><strong>Instructor:</strong> John Smith</p>
-        <a href="/courses" class="btn" style="margin-top: 1rem;">Learn More</a>
-      </div>
-      <div class="card">
-        <h3>Data Science Seminar</h3>
-        <p><strong>Date:</strong> March 18, 2025</p>
-        <p><strong>Time:</strong> 4:00 PM</p>
-        <p><strong>Instructor:</strong> Sarah Johnson</p>
-        <a href="/courses" class="btn" style="margin-top: 1rem;">Learn More</a>
-      </div>
-    </div>
+
+<section class="container" style="padding: 3rem 0;">
+
+  <!-- School introduction -->
+  <div class="university-intro">
+    <h1>Welcome to LearnHub University</h1>
+    <p>
+      LearnHub is a modern and dynamic e-learning platform, offering a wide range of courses, expert instructors, and interactive live sessions.
+      Join our vibrant community of learners and prepare yourself for future career challenges. Empower your learning journey today!
+    </p>
   </div>
-</div>
+
+  <!-- Live sessions -->
+  <section class="container" style="padding: 3rem 0;">
+    <h1>Upcoming Live Sessions</h1>
+  
+    <% if (liveSessions.length === 0) { %>
+      <p>No sessions available at the moment.</p>
+    <% } else { %>
+      <div class="course-grid">
+        <% liveSessions.forEach(session => { %>
+          <div class="card">
+            <h3><%= session.title %></h3>
+            <p><strong>Date:</strong> <%= session.date %></p>
+            <p><strong>Time:</strong> <%= session.time %></p>
+            <p><strong>Instructor:</strong> <%= session.instructor %></p>
+            <% if (session.webex_code) { %>
+              <p><strong>Webex Room:</strong> <%= session.webex_code %></p>
+            <p><%= session.description %></p>
+            
+            <% } %>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </section>
+
+</section>
+
 <%- include('partials/footer') %>

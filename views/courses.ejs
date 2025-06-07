@@ -7,14 +7,17 @@
     <div class="course-grid">
       <% courses.forEach(course => { %>
         <div class="card course-card" style="background: linear-gradient(to right, hsla(0, 0%, 100%, 0.59), hsla(203, 92%, 55%, 0.404)), url('/images/courses/<%= course.image %>')">
-          <div style="background: rgba(255, 255, 255, 0.6); padding: 1rem; border-radius: 10px;">
+          <div style="background: rgba(255, 255, 255, 0.6); padding: 1rem; border-radius: 10px; position:center;">
             <h3><%= course.name %></h3>
             <p><strong>Instructor:</strong> <%= course.instructor %></p>
             <p><strong>Duration:</strong> <%= course.duration %></p>
             <p><%= course.description.length > 150 ? course.description.substring(0, 150) + '...' : course.description %></p>
+            <button class="btn" style="margin-top: 1rem;">
+              <a href="/contact" style="color: white; text-decoration: none;">Contact about course</a>
           </div>
         </div>
       <% }); %>
     </div>
   </section>
+
 <%- include('partials/footer') %>

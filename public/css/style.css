@@ -24,7 +24,7 @@ box-sizing: border-box;
 --primary-color: #438fc2;
 --secondary-color: #4a6580;
 --accent-color: #ecf0f1;
---text-dark: #484747;
+--text-dark: #717171;
 --card-bg: #ffffff;
 --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 } 
@@ -33,9 +33,14 @@ box-sizing: border-box;
 --primary-color: #0f2f63;
 --secondary-color: #202124;
 --accent-color: #303134;
---text-dark: #000000;
+--text-dark: #a2a1a1;
 --card-bg: #3c4043;
 --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .faq-question {
+  background: var(--primary-color);
+  color: var(--text-dark);
 }
 
 /* Dark mode toggle button */
@@ -59,12 +64,15 @@ body {
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 background: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('../images/bg.jpg') no-repeat center center fixed;
 background-size: cover;
+display: flex;
+flex-direction: column;
 min-height: 100vh;
+color: var(--text-dark);
+background-attachment: fixed;
 color: var(--text-dark);
 }
 
 
-/* Header */
 header {
 background-color: var(--secondary-color);
 color: white;
@@ -73,6 +81,62 @@ text-align: center;
 box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
+footer {
+  margin-top: auto;
+  background-color: var(--secondary-color);
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo {
+  font-family: 'Lilita';
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.logo-container a {
+  font-family: 'Lilita', cursive;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.logo-container a:hover {
+  transform: scale(1.1);
+}
+
+.university-intro {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  padding: 2rem;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.university-intro h1 {
+  font-family: 'Lilita', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.university-intro p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
 
 nav {
 display: flex;
@@ -80,13 +144,6 @@ justify-content: space-between;
 align-items: center;
 max-width: 1200px;
 margin: 0 auto;
-}
-
-.logo {
-font-family: 'Lilita';
-color: #ffffff;
-font-size: 2rem;
-font-weight: bold;
 }
 
 nav ul {
@@ -115,6 +172,7 @@ background-color: #3498db;
 max-width: 1200px;
 margin: 2rem auto;
 padding: 0 1rem;
+flex: 1;
 }
 
 h1 {
@@ -127,11 +185,17 @@ h3 {
 font-family: Sigmar;
 font-size: 2em;
 }
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
 /* Cards */
 .card {
 background-color: var(--card-bg);
 color: var(--text-dark);
-box-shadow: var(--card-shadow);
+box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 border-radius: 12px;
 padding: 1.5rem;
 margin: 1rem 0;
@@ -140,7 +204,7 @@ transition: background 0.3s ease, box-shadow 0.3s ease;
 
 .card:hover {
 transform: translateY(-5px);
-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 /* Course Cards */
@@ -152,7 +216,6 @@ background-blend-mode: overlay;
 
 .course {
 background-color: #2980b9;
-background-position: cover;
 display: flex;
 flex-direction: column;
 height: 100%;
@@ -188,7 +251,7 @@ margin-bottom: 1rem;
 }
 
 .faq-question {
-background: #3498db;
+background: var(--primary-color);
 color: white;
 padding: 1rem;
 border-radius: 6px;
@@ -203,9 +266,10 @@ background: #2980b9;
 
 .faq-answer {
 padding: 1rem;
-background: #f8f9fa;
+background: transparent;
 border-radius: 0 0 6px 6px;
 display: none;
+transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Contact Form */
@@ -246,6 +310,8 @@ min-height: 150px;
 background-color: var(--primary-color);
 color: #fff;
 padding: 0.7rem 1.2rem;
+display: inline-block;
+margin-top: 1rem; 
 border: none;
 border-radius: 8px;
 font-weight: 600;
