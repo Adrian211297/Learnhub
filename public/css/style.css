@@ -24,7 +24,7 @@ box-sizing: border-box;
 --primary-color: #438fc2;
 --secondary-color: #4a6580;
 --accent-color: #ecf0f1;
---text-dark: #717171;
+--text-dark: #1e1e1e;
 --card-bg: #ffffff;
 --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 } 
